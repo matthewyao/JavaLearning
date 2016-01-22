@@ -4,7 +4,6 @@ package com.matthewyao.practice.spider;
  * Created by matthewyao on 2016/1/22.
  */
 import java.util.Set;
-import com.matthewyao.practice.spider.SpiderQueue;
 
 public class BfsSpider {
     /**
@@ -18,10 +17,11 @@ public class BfsSpider {
     public void crawling(String[] seeds) {
         LinkFilter filter = new LinkFilter() {
             public boolean accept(String url) {
-                if (url.startsWith("http://www.baidu.com"))
-                    return true;
-                else
-                    return false;
+                return true;
+//                if (url.startsWith("http://www.baidu.com"))
+//                    return true;
+//                else
+//                    return false;
             }
         };
         // 初始化 URL 队列
@@ -49,6 +49,7 @@ public class BfsSpider {
     // main 方法入口
     public static void main(String[] args) {
         BfsSpider crawler = new BfsSpider();
-        crawler.crawling(new String[] { "http://www.baidu.com" });
+        crawler.crawling(new String[] { "http://www.ola.com.cn" });
+        System.out.println("Finish!");
     }
 }

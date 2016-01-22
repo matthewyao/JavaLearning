@@ -71,6 +71,10 @@ public class DownTool {
                     + getFileNameByUrl(url,
                     getMethod.getResponseHeader("Content-Type")
                             .getValue());
+            File file = new File(filePath);
+            if (!file.getParentFile().exists()){
+                file.getParentFile().mkdir();
+            }
             saveToLocal(responseBody, filePath);
         } catch (HttpException e) {
             // 发生致命的异常，可能是协议不对或者返回的内容有问题
