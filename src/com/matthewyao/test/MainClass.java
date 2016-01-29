@@ -5,6 +5,11 @@ package com.matthewyao.test;
  */
 public class MainClass {
     public static void main(String[] args) {
-        TestJavaURL.curl("http://www.baidu.com");
+        for (int i=0;i<10;i++){
+            new TestMultipleThread().run();
+        }
+//        TestMultipleThread thread = new TestMultipleThread();
+//        thread.run();
+//        TestJavaURL.curl("http://www.baidu.com");
     }
 }
