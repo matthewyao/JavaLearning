@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efdc9e2f-c6c2-44e2-9102-77ee67be7492" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewFixedThreadPool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaLearning/com/matthewyao/threadpool/MyThread.class" afterPath="$PROJECT_DIR$/out/production/JavaLearning/com/matthewyao/threadpool/MyThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaLearning/com/matthewyao/threadpool/NewSingleThreadExecutor.class" afterPath="$PROJECT_DIR$/out/production/JavaLearning/com/matthewyao/threadpool/NewSingleThreadExecutor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaLearning.iml" afterPath="$PROJECT_DIR$/JavaLearning.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/matthewyao/threadpool/MyThread.java" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/MyThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewSingleThreadExecutor.java" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewSingleThreadExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewCachedThreadPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java" afterPath="$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaLearning.iws" />
@@ -45,16 +38,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpiderQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/matthewyao/practice/spider/SpiderQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +86,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewFixedThreadPool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewFixedThreadPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewFixedThreadPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36065573">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="25" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewCachedThreadPool.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewCachedThreadPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41393444">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -191,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewSingleThreadExecutor.java" />
         <option value="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewFixedThreadPool.java" />
         <option value="$PROJECT_DIR$/src/com/matthewyao/threadpool/MyThread.java" />
+        <option value="$PROJECT_DIR$/src/com/matthewyao/threadpool/NewCachedThreadPool.java" />
         <option value="$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java" />
       </list>
     </option>
@@ -694,12 +690,12 @@
       <workItem from="1453371195916" duration="16335000" />
       <workItem from="1454050806783" duration="3119000" />
       <workItem from="1454491326756" duration="1844000" />
-      <workItem from="1454493441347" duration="930000" />
+      <workItem from="1454493441347" duration="1154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26828000" />
+    <option name="totallyTimeSpent" value="27052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1863" height="1096" extended-state="6" />
@@ -782,14 +778,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/practice/spider/DownTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/matthewyao/practice/spider/HtmlParserTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1156,6 +1144,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewFixedThreadPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewSingleThreadExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/MyThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1170,25 +1178,15 @@
     <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewSingleThreadExecutor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewCachedThreadPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/matthewyao/threadpool/NewFixedThreadPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36065573">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.41393444">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

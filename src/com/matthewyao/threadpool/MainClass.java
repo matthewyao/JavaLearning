@@ -8,7 +8,8 @@ public class MainClass {
         //Single thread pool test
 //        NewSingleThreadExecutor.start();
         //Fixed thread pool test
-        NewFixedThreadPool.start();
-
+//        NewFixedThreadPool.start();
+        //Cached thread pool test
+//        NewCachedThreadPool.start();
     }
 }
