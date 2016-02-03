@@ -1,16 +1,15 @@
 package com.matthewyao.threadpool;
 
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
  * Created by matthewyao on 2016/2/3.
  */
-public class NewSingleThreadExecutor {
-    public static void start() {
-        //创建一个单线程的线程池
-        ExecutorService pool = Executors.newSingleThreadExecutor();
+public class NewFixedThreadPool {
+    public static void start(){
+        //鍒涘缓涓�涓崟绾跨▼鐨勭嚎绋嬫睜
+        ExecutorService pool = Executors.newFixedThreadPool(2);
 
         Thread t1 = new MyThread();
         Thread t2 = new MyThread();
