@@ -6,6 +6,11 @@ package com.matthewyao.threadpool;
 public class MyThread extends Thread{
     @Override
     public void run(){
-        System.out.println(Thread.currentThread().getName() + " is now running...");
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//        System.out.println(Thread.currentThread().getName() + " is now running...");
     }
 }
