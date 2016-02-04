@@ -6,7 +6,15 @@ package com.matthewyao.sort;
 public class MainClass {
     public static void main(String[] args) {
         int[] initArray = {3,2,7,1,8,3,9,2,54,24,67,34,22},sortArray;
+        System.out.print("Before sort:");
+        for (int a:initArray) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
         sortArray = InsertSorting.InsertSort(initArray);
-        System.out.println(sortArray);
+        System.out.print("After sort:");
+        for (int a: sortArray) {
+            System.out.print(a + " ");
+        }
     }
 }
