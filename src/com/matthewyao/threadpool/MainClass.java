@@ -8,12 +8,12 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class MainClass {
     public static void main(String[] args) {
         //Single thread pool test
-//        NewSingleThreadExecutor.start();
+        NewSingleThreadExecutor.start();
         //Fixed thread pool test
 //        NewFixedThreadPool.start();
         //Cached thread pool test
 //        NewCachedThreadPool.start();
         //Scheduled thread pool test
-        NewScheduledThreadPool.start();
+//        NewScheduledThreadPool.start();
     }
 }
