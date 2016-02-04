@@ -4,6 +4,13 @@ package com.matthewyao.sort;
  * Created by mosmovon on 16/2/4.
  */
 public class MergeSorting {
+
+    /**
+     * 归并排序采用的是递归来实现，属于“分而治之”，将目标数组从中间一分为二，之后分别对这两个数组进行排序，
+     * 排序完毕之后再将排好序的两个数组“归并”到一起，归并排序最重要的也就是这个“归并”的过程，
+     * 归并的过程中需要额外的跟需要归并的两个数组长度一致的空间
+     * */
+
     /**
      * @param int 未排序数组
      * @return int 排完序数组
