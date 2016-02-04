@@ -16,7 +16,8 @@ public class MainClass {
 //        sortArray = BubbleSorting.sort(initArray);
 //        sortArray = QuickSorting.sort(initArray);
 //        sortArray = MergeSorting.sort(initArray);
-        sortArray = ShellSorting.sort(initArray);
+//        sortArray = ShellSorting.sort(initArray);
+        sortArray = HeapSorting.sort(initArray);
         System.out.print("After sort:");
         for (int a: sortArray) {
             System.out.print(a + " ");
