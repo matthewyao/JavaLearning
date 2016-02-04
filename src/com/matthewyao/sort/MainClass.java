@@ -12,7 +12,8 @@ public class MainClass {
         }
         System.out.println();
 //        sortArray = InsertSorting.sort(initArray);
-        sortArray = SelectSorting.sort(initArray);
+//        sortArray = SelectSorting.sort(initArray);
+        sortArray = BubbleSorting.sort(initArray);
         System.out.print("After sort:");
         for (int a: sortArray) {
             System.out.print(a + " ");
