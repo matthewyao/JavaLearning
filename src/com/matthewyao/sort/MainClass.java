@@ -11,6 +11,7 @@ public class MainClass {
             System.out.print(a + " ");
         }
         System.out.println();
+        //test each sort function
 //        sortArray = InsertSorting.sort(initArray);
 //        sortArray = SelectSorting.sort(initArray);
 //        sortArray = BubbleSorting.sort(initArray);
