@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Map;
 
 /**
  * Created by matthewyao on 2016/4/25.
@@ -12,6 +13,13 @@ public class Test {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("D:/mz_area_data.txt"),"utf-8"));
         for (int i = 0; i<3; i++){
             System.out.println(br.readLine());
+        }
+        //显示所有操作系统环境变量
+        for (Map.Entry entry : System.getenv().entrySet()){
+            System.out.println(entry.getKey()+": "+entry.getValue());
+        }
+        for (String s : System.getenv().values()){
+            System.out.println(s);
         }
     }
 }
