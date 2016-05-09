@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaLearning.iml" filepath="$PROJECT_DIR$/JavaLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestFileEncoding/GbkAndUtf-8.iml" filepath="$PROJECT_DIR$/TestFileEncoding/GbkAndUtf-8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TestFinalKeyword/TestFinal.iml" filepath="$PROJECT_DIR$/TestFinalKeyword/TestFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaLearning.iml" filepath="$PROJECT_DIR$/JavaLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestJavaStack/JavaStack.iml" filepath="$PROJECT_DIR$/TestJavaStack/JavaStack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestFinalKeyword/TestFinal.iml" filepath="$PROJECT_DIR$/TestFinalKeyword/TestFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestVolatileKeyword/TestForVolatile.iml" filepath="$PROJECT_DIR$/TestVolatileKeyword/TestForVolatile.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestReadFile/TestReadFile.iml" filepath="$PROJECT_DIR$/TestReadFile/TestReadFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestRunAndStart/TestRunAndStart.iml" filepath="$PROJECT_DIR$/TestRunAndStart/TestRunAndStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestThread/TestThread.iml" filepath="$PROJECT_DIR$/TestThread/TestThread.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TestVolatileKeyword/TestForVolatile.iml" filepath="$PROJECT_DIR$/TestVolatileKeyword/TestForVolatile.iml" />
     </modules>
   </component>
 </project>
