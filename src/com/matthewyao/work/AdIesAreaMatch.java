@@ -71,19 +71,47 @@ public class AdIesAreaMatch {
     }
 
     private void compareAreaData(){
-        boolean isMatch = false;
-        for (Map.Entry<String, String> pptvEntry : pptvAreaMap.entrySet()) {
-            for (Map.Entry<String, String> adEntry : adAreaMap.entrySet()) {
-                //AdMaster的地域名称包含PPTV名称
-                if (adEntry.getValue().contains(pptvEntry.getValue())){
-                    System.out.println("Yes:"+pptvEntry.getKey()+" "+pptvEntry.getValue()+" "+adEntry.getKey()+" "+adEntry.getValue());
-                    isMatch = true;
-                }else {
+        BufferedWriter bw;
+        try {
+            bw = new BufferedWriter(new FileWriter(new File("H:\\Workspace\\AdMasterIES\\ad_data.sql")));
+            for (Map.Entry<String, String> pptvEntry : pptvAreaMap.entrySet()) {
+                boolean isMatch = false;
+                for (Map.Entry<String, String> adEntry : adAreaMap.entrySet()) {
+                    String sql = "INSERT INTO `pplive_ad`.`ad_data_area_ads2admaster` (`adsId`, `adsName`, `admasterId`, `admasterName`) VALUES (:adsId, ':adsName', :admasterId, ':admasterName');";
+                    //AdMaster的地域名称包含PPTV名称
+                    if (adEntry.getValue().contains(pptvEntry.getValue()) || pptvEntry.getValue().contains(adEntry.getValue())) {
+                        sql = sql.replace(":adsId", pptvEntry.getKey());
+                        sql = sql.replace(":adsName", pptvEntry.getValue());
+                        sql = sql.replace(":admasterId", adEntry.getKey());
+                        sql = sql.replace(":admasterName", adEntry.getValue());
+                        bw.write(sql);
+                        bw.newLine();
+                        //                    System.out.println("Yes:"+pptvEntry.getKey()+" "+pptvEntry.getValue()+" "+adEntry.getKey()+" "+adEntry.getValue());
+                        //                    isMatch = true;
+                    }
                 }
             }
-            if (!isMatch){
-                System.out.println("Not:"+pptvEntry.getKey()+" "+pptvEntry.getValue());
-            }
+            bw.flush();
+            bw.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
+//            if (!isMatch){
+//                System.out.println("Not:"+pptvEntry.getKey()+" "+pptvEntry.getValue());
+//            }
     }
+
+//        for (Map.Entry<String, String> adEntry : adAreaMap.entrySet()) {
+//            boolean isMatch = false;
+//            for (Map.Entry<String, String> pptvEntry : pptvAreaMap.entrySet()) {
+//                //AdMaster的地域名称包含PPTV名称
+//                if (adEntry.getValue().contains(pptvEntry.getValue()) || pptvEntry.getValue().contains(adEntry.getValue())){
+//                    isMatch = true;
+//                }
+//            }
+//            if (!isMatch){
+//                System.out.println("Not:"+adEntry.getKey()+" "+adEntry.getValue());
+//            }
+//        }
 }
+
