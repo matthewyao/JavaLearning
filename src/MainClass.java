@@ -1,3 +1,4 @@
+import com.matthewyao.util.VerifyCodeUtil;
 import com.matthewyao.work.AdIesAreaMatch;
 
 /**
@@ -5,6 +6,7 @@ import com.matthewyao.work.AdIesAreaMatch;
  */
 public class MainClass {
     public static void main(String[] args) {
-        new AdIesAreaMatch().matchAreaName();
+//        new AdIesAreaMatch().matchAreaName();//测试地域名称匹配
+        new VerifyCodeUtil().execute();//测试验证码
     }
 }

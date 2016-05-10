@@ -11,10 +11,10 @@ import java.util.Map;
  */
 public class AdIesAreaMatch {
 
-    private Map<String,String> adAreaMap = new HashMap<String, String>();
-    private Map<String,String> pptvAreaMap = new HashMap<String, String>();
+    private Map<String, String> adAreaMap = new HashMap<String, String>();
+    private Map<String, String> pptvAreaMap = new HashMap<String, String>();
 
-    public void matchAreaName(){
+    public void matchAreaName() {
         File adCityFile = new File("H:\\Workspace\\AdMasterIES\\new_city.csv");
         File adProvinceFile = new File("H:\\Workspace\\AdMasterIES\\new_province.csv");
         File adForeignFile = new File("H:\\Workspace\\AdMasterIES\\new_foreign.csv");
@@ -27,7 +27,7 @@ public class AdIesAreaMatch {
 
         try {
             //合并AdMaster的地域数据
-            for (File file : adFileList){
+            for (File file : adFileList) {
                 BufferedReader adReader = new BufferedReader(new FileReader(file));
                 adReader.readLine();//跳过首行
                 mergeAdAreaToMap(adReader);
@@ -43,34 +43,34 @@ public class AdIesAreaMatch {
         compareAreaData();
     }
 
-    private void mergeAdAreaToMap(BufferedReader br){
+    private void mergeAdAreaToMap(BufferedReader br) {
         String line;
         try {
-            while ((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 String id = line.split(",")[0];
                 String name = line.split(",")[1];
-                name = name.replaceAll("\"","");
-                adAreaMap.put(id,name);
+                name = name.replaceAll("\"", "");
+                adAreaMap.put(id, name);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void pptvAreaToMap(BufferedReader br){
+    private void pptvAreaToMap(BufferedReader br) {
         String line;
         try {
-            while ((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 String id = line.split("\t")[0];
                 String name = line.split("\t")[1];
-                pptvAreaMap.put(id,name);
+                pptvAreaMap.put(id, name);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void compareAreaData(){
+    private void compareAreaData() {
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter(new File("H:\\Workspace\\AdMasterIES\\ad_data.sql")));
@@ -91,7 +91,7 @@ public class AdIesAreaMatch {
             }
             bw.flush();
             bw.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
