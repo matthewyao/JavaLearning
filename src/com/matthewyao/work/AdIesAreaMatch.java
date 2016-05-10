@@ -86,8 +86,6 @@ public class AdIesAreaMatch {
                         sql = sql.replace(":admasterName", adEntry.getValue());
                         bw.write(sql);
                         bw.newLine();
-                        //                    System.out.println("Yes:"+pptvEntry.getKey()+" "+pptvEntry.getValue()+" "+adEntry.getKey()+" "+adEntry.getValue());
-                        //                    isMatch = true;
                     }
                 }
             }
@@ -96,9 +94,6 @@ public class AdIesAreaMatch {
         }catch (Exception e){
             e.printStackTrace();
         }
-//            if (!isMatch){
-//                System.out.println("Not:"+pptvEntry.getKey()+" "+pptvEntry.getValue());
-//            }
     }
 
 //        for (Map.Entry<String, String> adEntry : adAreaMap.entrySet()) {
