@@ -1,4 +1,7 @@
+import com.matthewyao.util.TestWebDriver;
 import com.matthewyao.util.VerifyCodeUtil;
+import com.matthewyao.work.AdIESHmacSHA;
+import com.matthewyao.work.AdIESHmacSHATest;
 import com.matthewyao.work.AdIesAreaMatch;
 
 /**
@@ -7,6 +10,9 @@ import com.matthewyao.work.AdIesAreaMatch;
 public class MainClass {
     public static void main(String[] args) {
 //        new AdIesAreaMatch().matchAreaName();//测试地域名称匹配
-        new VerifyCodeUtil().execute();//测试验证码
+//        new VerifyCodeUtil().execute();//测试验证码
+//        new TestWebDriver().execute();//测试webDriver
+//        new AdIESHmacSHA().execute();
+        new AdIESHmacSHATest().execute();
     }
 }
