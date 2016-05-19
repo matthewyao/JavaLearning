@@ -1,20 +1,16 @@
 package com.matthewyao.work;
 
-import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
-import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -22,40 +18,41 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * Created by matthewyao on 2016/5/13.
+ * Created by robinzhou on 2016/5/18.
  */
 public class AdIESHmacSHATest {
 
-    public static final String KEY = "YOURAPPSECRET";
-    public static final String HMACSHA256 = "hmacSHA256";
-    public static final String TEST_URL = "GET\n/api_v2/medias/2/reports/ies\napp_key=YOURAPPKEY&date=2016-05-10&pubId=PUB_123456&maxResults=1&signature_method=HmacSHA256&signature_version=1&startIndex=0&timestamp=2016-05-11T08%3A41%3A22Z";
+    public static final String KEY = "e20e5b3b4bce2a8b85ee03f2be346fc9";
+    public static final String PATTERN = "YYYY-MM-dd'T'hh:mm:ss'Z'";
+    public static final String URL = "GET\n/api_v2/medias/1113/reports/ies\napp_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=";
+    public static String FULL_URL = "https://track.admasterapi.com/api_v2/medias/1113/reports/ies?app_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=[TIMESTAMP]&signature=[SIGNATURE]";
 
-    public static void execute() {
+    public static void execute(){
+        String signature = null;
+        SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+        String timestamp = sdf.format(new Date());
         try {
-            byte[] result = encryptHMAC(TEST_URL.getBytes(),KEY);
-            String signature = new BigInteger(result).toString(16);
-            System.out.println(signature);
-            signature = encryptBASE64(signature.getBytes());
-            System.out.println(signature);
-            signature = URLEncoder.encode(signature, "UTF-8");
-            System.out.println(signature);
+            timestamp = URLEncoder.encode(timestamp, "UTF-8");
+            String iesUrl = URL + timestamp;
+            signature = hmacSHA256(KEY, iesUrl);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-    public static byte[] decryptBASE64(String key) throws Exception {
-        return (new BASE64Decoder()).decodeBuffer(key);
-    }
-    public static String encryptBASE64(byte[] key) throws Exception {
-        return (new BASE64Encoder()).encodeBuffer(key);
-    }
-    public static byte[] encryptHMAC(byte[] data, String key) throws Exception {
-        SecretKey secretKey = new SecretKeySpec(decryptBASE64(key), HMACSHA256);
-        Mac mac = Mac.getInstance(secretKey.getAlgorithm());
-        mac.init(secretKey);
-        return mac.doFinal(data);
+        FULL_URL = FULL_URL.replace("[TIMESTAMP]",timestamp);
+        FULL_URL = FULL_URL.replace("[SIGNATURE]",signature);
+        System.out.println("result:"+executeGet(FULL_URL));
     }
 
+    public static String hmacSHA256( String key, String message) throws Exception {
+        Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
+        SecretKeySpec secret_key = new SecretKeySpec(key.getBytes("UTF-8"), "HmacSHA256");
+        sha256_HMAC.init(secret_key);
+
+        String signature = Base64.encodeBase64String(sha256_HMAC.doFinal(message.getBytes("UTF-8")));
+        signature = URLEncoder.encode(signature, "UTF-8");
+        return signature;
+    }
 
     public static String executeGet(String url){
         BufferedReader in = null;
