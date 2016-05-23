@@ -23,9 +23,11 @@ import java.util.TimeZone;
 public class AdIESHmacSHATest {
 
     public static final String KEY = "e20e5b3b4bce2a8b85ee03f2be346fc9";
-    public static final String PATTERN = "YYYY-MM-dd'T'hh:mm:ss'Z'";
-    public static final String URL = "GET\n/api_v2/medias/1113/reports/ies\napp_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=";
-    public static String FULL_URL = "https://track.admasterapi.com/api_v2/medias/1113/reports/ies?app_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=[TIMESTAMP]&signature=[SIGNATURE]";
+    public static final String PATTERN = "yyyy-MM-dd'T'hh:mm:ss'Z'";
+//    public static final String URL = "GET\n/api_v2/medias/1113/reports/ies\napp_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=";
+//    public static String FULL_URL = "https://track.admasterapi.com/api_v2/medias/1113/reports/ies?app_key=d990b49&date=2016-05-18&signature_method=HmacSHA256&signature_version=1&timestamp=[TIMESTAMP]&signature=[SIGNATURE]";
+    public static final String URL = "GET\n/api_v2/medias/1113/reports/ies\napp_key=d990b49&date=2016-05-19&signature_method=HmacSHA256&signature_version=1&timestamp=";
+    public static String FULL_URL = "https://track.admasterapi.com/api_v2/medias/1113/reports/ies?app_key=d990b49&date=2016-05-19&signature_method=HmacSHA256&signature_version=1&timestamp=[TIMESTAMP]&signature=[SIGNATURE]";
 
     public static void execute(){
         String signature = null;
@@ -51,6 +53,7 @@ public class AdIESHmacSHATest {
 
         String signature = Base64.encodeBase64String(sha256_HMAC.doFinal(message.getBytes("UTF-8")));
         signature = URLEncoder.encode(signature, "UTF-8");
+        System.out.println(signature);
         return signature;
     }
 
