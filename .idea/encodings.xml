@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-<<<<<<< HEAD
-    <file url="file://$PROJECT_DIR$/src/com/matthewyao/allyes/carpenter/CarpenterLogs.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/matthewyao/base64decode/Test.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/matthewyao/test/TestFileEncoding.java" charset="UTF-8" />
-=======
-    <file url="file://$PROJECT_DIR$/TestFileEncoding/src/Test.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/matthew/base64decode/Test.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/matthewyao/sikuli/allyes/carpenter/CarpenterLogs.java" charset="GBK" />
->>>>>>> 683d399d927e449061fb64ae26580776ad104119
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

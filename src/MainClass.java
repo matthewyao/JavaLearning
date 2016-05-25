@@ -1,5 +1,4 @@
 import com.matthewyao.sikuli.JavaSikuliDemo;
-import com.matthewyao.sikuli.work.AdIESHmacSHATest;
 
 /**
  * Created by matthewyao on 2016/5/9.
