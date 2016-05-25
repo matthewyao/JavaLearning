@@ -3,7 +3,7 @@ package com.matthew.base64decode;
 import java.io.*;
 import java.net.URLDecoder;
 
-import com.matthewyao.allyes.carpenter.CarpenterLogs;
+import com.matthewyao.sikuli.allyes.carpenter.CarpenterLogs;
 
 import sun.misc.BASE64Decoder;
 
