@@ -1,8 +1,5 @@
-import com.matthewyao.util.TestWebDriver;
-import com.matthewyao.util.VerifyCodeUtil;
-import com.matthewyao.work.AdIESHmacSHA;
-import com.matthewyao.work.AdIESHmacSHATest;
-import com.matthewyao.work.AdIesAreaMatch;
+import com.matthewyao.sikuli.JavaSikuliDemo;
+import com.matthewyao.sikuli.work.AdIESHmacSHATest;
 
 /**
  * Created by matthewyao on 2016/5/9.
@@ -13,6 +10,7 @@ public class MainClass {
 //        new VerifyCodeUtil().execute();//测试验证码
 //        new TestWebDriver().execute();//测试webDriver
 //        new AdIESHmacSHA().execute();
-        new AdIESHmacSHATest().execute();
+//        new AdIESHmacSHATest().execute();
+        new JavaSikuliDemo().execute();
     }
 }
