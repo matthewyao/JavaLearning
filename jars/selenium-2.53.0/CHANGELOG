@@ -658,7 +658,7 @@ WebDriver:
   * Change some tests to use Alert#accept() instead of Alert#dismiss() to get rid of alert dialogs. This is a workaround to ChromeDriver issue 764:
   * When running tests against the remote server, ignore two tests that use required capabilities. The remote server only supports desired capabilities on new session requests.
   * Update two tests to work when running with a remote server, where the original js error will be the root exception, but not necessarily the second error in the cause chain.
-  * Test if we need to skip cookie tests for lack of a valid domain name before calling a method that asserts we have a valid domain name.
+  * TestFileEncoding if we need to skip cookie tests for lack of a valid domain name before calling a method that asserts we have a valid domain name.
   * Convert HttpRequest/Response to POJOs; handle all conversion to and from HttpServletRequest/Response inside DriverServlet.
   * Every command handler returns ResultType.SUCCESS and those handlers that return an actual value do so through a level of indirection. This commit changes command handlers to just return results directly to the caller, making it possible to delete a lot of unnecessary code.
   * Move static resource serving code into DriverServlet. It is not part of the JSON wire protocol and including it in the command dispatcher complicates planned refactoring and other code cleanup.
@@ -1739,7 +1739,7 @@ WebDriver:
     to the latest and greatest.
 
 WebDriverJS:
-  * Test failures are now annotated with the task history.
+  * TestFileEncoding failures are now annotated with the task history.
   * JSONP support dropped in favour of CORS. For those browsers where
     CORS is not fully implemented, added a "/xdrpc" (cross-domain rpc)
     end-point.

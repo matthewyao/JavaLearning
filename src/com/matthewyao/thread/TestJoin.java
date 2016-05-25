@@ -1,3 +1,5 @@
+package com.matthewyao.thread;
+
 /**
  * Created by matthewyao on 2016/5/3.
  */
@@ -31,7 +33,7 @@ class Thread2 implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("I am Thread2");
+            System.out.println("I am com.matthewyao.thread.Thread2");
         }
     }
 }

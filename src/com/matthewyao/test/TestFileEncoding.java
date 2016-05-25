@@ -1,10 +1,12 @@
+package com.matthewyao.test;
+
 import java.io.*;
 import java.util.Map;
 
 /**
  * Created by matthewyao on 2016/4/25.
  */
-public class Test {
+public class TestFileEncoding {
     /***/
     public static void main(String[] args) throws IOException {
         System.out.println("测试一下");
