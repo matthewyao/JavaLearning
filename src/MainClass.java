@@ -1,4 +1,5 @@
 import com.matthewyao.sikuli.JavaSikuliDemo;
+import com.matthewyao.sikuli.TestOCR;
 
 /**
  * Created by matthewyao on 2016/5/9.
@@ -8,8 +9,9 @@ public class MainClass {
 //        new AdIesAreaMatch().matchAreaName();//测试地域名称匹配
 //        new VerifyCodeUtil().execute();//测试验证码
 //        new TestWebDriver().execute();//测试webDriver
-//        new AdIESHmacSHA().execute();
+//        new AdIESHmacSHA().execute();//Admaster IES功能
 //        new AdIESHmacSHATest().execute();
-        new JavaSikuliDemo().execute();
+//        new JavaSikuliDemo().execute();//测试Sikuli拍牌
+        new TestOCR().execute();//测试OCR功能
     }
 }

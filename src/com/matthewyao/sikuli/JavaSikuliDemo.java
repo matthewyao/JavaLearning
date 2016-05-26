@@ -1,5 +1,6 @@
 package com.matthewyao.sikuli;
 
+import com.asprise.ocr.Ocr;
 import org.sikuli.script.*;
 
 import javax.imageio.ImageIO;
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class JavaSikuliDemo {
 
     private static String imgPath = "E:\\sikuli.image\\";
+    private static String PRICE_RANGE = "price_range";
 
     public static void execute(){
         Screen screen = new Screen();
@@ -30,8 +32,10 @@ public class JavaSikuliDemo {
             int x = (int)(r.getX()+r.getWidth()) + 5 ;
             int y = (int)(r.getY());
             int h = (int)r.getHeight() - 5;
-            BufferedImage image = screen.capture(x,y,100,h).getImage();
-            saveImg(image);
+            BufferedImage image = screen.capture(x,y,45,h).getImage();
+            BufferedImage zoomImage = zoomInImage(image);
+            saveImg(zoomImage);
+            String priceRange = ocrPrice(url(PRICE_RANGE));
             screen.paste(url("price"),"85200");
             screen.click(url("bid"));
 //            if (screen.exists(url("confirm"))){
@@ -47,11 +51,30 @@ public class JavaSikuliDemo {
     }
 
     private static void saveImg(BufferedImage image){
-        File file = new File(imgPath + "price_range.png");
+        File file = new File(url(PRICE_RANGE));
         try {
             ImageIO.write(image,"png",file);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static String ocrPrice(String imgName){
+        Ocr.setUp();
+        Ocr ocr = new Ocr();
+        ocr.startEngine("eng",Ocr.SPEED_FASTEST);
+
+        String s = ocr.recognize(new File[]{new File(url(PRICE_RANGE))},Ocr.RECOGNIZE_TYPE_ALL,Ocr.OUTPUT_FORMAT_PLAINTEXT);
+        System.out.println(s);
+        return s;
+    }
+
+    public static BufferedImage zoomInImage(BufferedImage originalImage)
+    {
+        Image image = originalImage.getScaledInstance(100,38,Image.SCALE_SMOOTH);
+        BufferedImage bufferedImage = new BufferedImage(100,38,BufferedImage.TYPE_3BYTE_BGR);
+        Graphics graphics = bufferedImage.getGraphics();
+        graphics.drawImage(image,0,0,null);
+        return bufferedImage;
     }
 }
