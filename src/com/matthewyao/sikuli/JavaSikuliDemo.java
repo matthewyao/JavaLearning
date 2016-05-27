@@ -6,8 +6,12 @@ import org.sikuli.script.*;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by matthewyao on 2016/5/24.
@@ -24,7 +28,7 @@ public class JavaSikuliDemo {
             screen.paste(url("url_input"),"moni.51hupai.org/?new=13");
             screen.type("\n");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -35,6 +39,7 @@ public class JavaSikuliDemo {
             BufferedImage image = screen.capture(x,y,45,h).getImage();
             BufferedImage zoomImage = zoomInImage(image);
             saveImg(zoomImage);
+//            saveImg(image);
             String priceRange = ocrPrice(url(PRICE_RANGE));
             screen.paste(url("price"),"85200");
             screen.click(url("bid"));
@@ -51,7 +56,9 @@ public class JavaSikuliDemo {
     }
 
     private static void saveImg(BufferedImage image){
-        File file = new File(url(PRICE_RANGE));
+        SimpleDateFormat sdf = new SimpleDateFormat("MMddhhmmss");
+        String time = sdf.format(new Date());
+        File file = new File(url(PRICE_RANGE+time));
         try {
             ImageIO.write(image,"png",file);
         } catch (IOException e) {
@@ -71,10 +78,34 @@ public class JavaSikuliDemo {
 
     public static BufferedImage zoomInImage(BufferedImage originalImage)
     {
-        Image image = originalImage.getScaledInstance(100,38,Image.SCALE_SMOOTH);
-        BufferedImage bufferedImage = new BufferedImage(100,38,BufferedImage.TYPE_3BYTE_BGR);
+        int width = originalImage.getWidth() * 2;
+        int height = originalImage.getHeight() * 2;
+        Image image = originalImage.getScaledInstance(width,height,Image.SCALE_SMOOTH);
+        BufferedImage bufferedImage = new BufferedImage(width,height,BufferedImage.TYPE_3BYTE_BGR);
         Graphics graphics = bufferedImage.getGraphics();
         graphics.drawImage(image,0,0,null);
         return bufferedImage;
+//        return getSharperPicture(bufferedImage);
     }
+
+    /**
+     * 锐化图片
+     * @param originalPic
+     * @return
+     */
+    public static final BufferedImage getSharperPicture(BufferedImage originalPic){
+        int imageWidth = originalPic.getWidth();
+        int imageHeight = originalPic.getHeight();
+
+        BufferedImage newPic = new BufferedImage(imageWidth, imageHeight,
+                BufferedImage.TYPE_3BYTE_BGR);
+        float[] data =
+                { -1.0f, -1.0f, -1.0f, -1.0f, 10.0f, -1.0f, -1.0f, -1.0f, -1.0f };
+
+        Kernel kernel = new Kernel(3, 3, data);
+        ConvolveOp co = new ConvolveOp(kernel, ConvolveOp.EDGE_NO_OP, null);
+        co.filter(originalPic, newPic);
+        return newPic;
+    }
+
 }
