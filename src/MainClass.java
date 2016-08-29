@@ -1,6 +1,4 @@
-import com.matthewyao.leetcode.NimGames;
-import com.matthewyao.leetcode.ReverseString;
-import com.matthewyao.leetcode.SumofTwoIntegers;
+import com.matthewyao.leetcode.*;
 
 /**
  * Created by matthewyao on 2016/5/9.
@@ -21,7 +19,10 @@ public class MainClass {
 //        }
 //        new ReverseString().reverseString("hello");
 //        new NimGames().canWinNim(4);
-        System.out.println(new SumofTwoIntegers().getSum(34,-125));;
-        System.out.println(new FindTheDifference().findTheDifference("abcdeface","baedgfceca"));;
+//        System.out.println(new SumofTwoIntegers().getSum(34,-125));
+//        System.out.println(new FindTheDifference().findTheDifference("abcdeface","baedgfceca"));
+//        System.out.println(new SingleNumber().singleNumber(new int[]{1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1}));
+//        System.out.println(new AddDigits().addDigits(123456));
+        System.out.println(new MaximumDepthofBinaryTree().maxDepth());
     }
 }

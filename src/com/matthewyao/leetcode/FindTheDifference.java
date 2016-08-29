@@ -1,3 +1,5 @@
+package com.matthewyao.leetcode;
+
 import java.util.HashMap;
 import java.util.Map;
 
