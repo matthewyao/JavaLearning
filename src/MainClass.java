@@ -17,10 +17,11 @@ public class MainClass {
 //        new AdIESHmacSHATest().execute();
 //        new JavaSikuliDemo().execute();//测试Sikuli拍牌
 //        new TestOCR().execute();//测试OCR功能
-        try {
-            TimeTest.execute();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeTest.execute();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+        System.out.println(new FindTheDifference().findTheDifference("abcdeface","baedgfceca"));;
     }
 }
