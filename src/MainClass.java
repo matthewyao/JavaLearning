@@ -1,9 +1,6 @@
-import com.matthewyao.sikuli.JavaSikuliDemo;
-import com.matthewyao.sikuli.TestOCR;
-import com.matthewyao.test.TimeTest;
-import com.matthewyao.work.AdIESHmacSHATest;
-
-import java.text.ParseException;
+import com.matthewyao.leetcode.NimGames;
+import com.matthewyao.leetcode.ReverseString;
+import com.matthewyao.leetcode.SumofTwoIntegers;
 
 /**
  * Created by matthewyao on 2016/5/9.
@@ -17,10 +14,13 @@ public class MainClass {
 //        new AdIESHmacSHATest().execute();
 //        new JavaSikuliDemo().execute();//测试Sikuli拍牌
 //        new TestOCR().execute();//测试OCR功能
-        try {
-            TimeTest.execute();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeTest.execute();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        new ReverseString().reverseString("hello");
+//        new NimGames().canWinNim(4);
+        System.out.println(new SumofTwoIntegers().getSum(34,-125));;
     }
 }
