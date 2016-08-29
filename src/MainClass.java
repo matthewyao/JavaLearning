@@ -22,5 +22,6 @@ public class MainClass {
 //        new ReverseString().reverseString("hello");
 //        new NimGames().canWinNim(4);
         System.out.println(new SumofTwoIntegers().getSum(34,-125));;
+        System.out.println(new FindTheDifference().findTheDifference("abcdeface","baedgfceca"));;
     }
 }
