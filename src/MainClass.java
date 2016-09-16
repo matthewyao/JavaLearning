@@ -1,3 +1,4 @@
+import com.matthewyao.designpattern.ProxyPattern;
 import com.matthewyao.leetcode.*;
 
 /**
@@ -23,6 +24,7 @@ public class MainClass {
 //        System.out.println(new FindTheDifference().findTheDifference("abcdeface","baedgfceca"));
 //        System.out.println(new SingleNumber().singleNumber(new int[]{1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1}));
 //        System.out.println(new AddDigits().addDigits(123456));
-        System.out.println(new MaximumDepthofBinaryTree().maxDepth());
+//        System.out.println(new MaximumDepthofBinaryTree().maxDepth());
+        ProxyPattern.execute();
     }
 }
