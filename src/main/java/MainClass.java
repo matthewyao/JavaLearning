@@ -27,6 +27,7 @@ public class MainClass {
 //        System.out.println(new AddDigits().addDigits(123456));
 //        System.out.println(new MaximumDepthofBinaryTree().maxDepth());
 //        ProxyPattern.execute();
-        TestMultiThread.execute("yk","123");
+//        TestMultiThread.execute("yk","123");
+        new CountingBits().countBits(5);
     }
 }

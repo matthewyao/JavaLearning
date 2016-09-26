@@ -14,13 +14,6 @@ public class TestMultiThread {
                 e.printStackTrace();
             }
             //2.登录成功查询所有数据
-            Thread one = new Thread(){
-                public void run(){
-                    queryPageAll();
-                }
-            };
-            one.start();
-            Thread two = new Thread
             System.out.println(System.currentTimeMillis() - beginTime);
             return true;
         }else {
