@@ -29,5 +29,6 @@ public class MainClass {
 //        ProxyPattern.execute();
 //        TestMultiThread.execute("yk","123");
 //        new CountingBits().countBits(5);
+        new InputArrayIsSorted().twoSum(new int[]{1,2,3,4,4,9,56,90},8);
     }
 }
