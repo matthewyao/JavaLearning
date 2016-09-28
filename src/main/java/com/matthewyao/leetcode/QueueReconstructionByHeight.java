@@ -1,9 +1,6 @@
 package com.matthewyao.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by matthewyao on 2016/9/26.
