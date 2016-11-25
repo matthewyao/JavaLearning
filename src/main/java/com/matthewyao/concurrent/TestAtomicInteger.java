@@ -1,32 +1,23 @@
 package com.matthewyao.concurrent;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by matthewyao on 2016/10/27.
  */
-public class TestVolatile {
+public class TestAtomicInteger {
 
-    public static volatile int race = 0;
-
-    private static Lock lock = new ReentrantLock();
+    private static AtomicInteger race = new AtomicInteger();
 
     public static void increse(){
         //由于race++并不是原子操作，所以存在其他线程将脏数据写回主内存
-        lock.lock();
-        try{
-            race++;
-        }finally {
-            lock.unlock();
-        }
+        race.incrementAndGet();
     }
 
     private static final int THREAD_COUNT = 30;
 
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("");
         long start = System.currentTimeMillis();
         Thread[] threads = new Thread[THREAD_COUNT];
         for (int i=0; i<THREAD_COUNT; i++){
