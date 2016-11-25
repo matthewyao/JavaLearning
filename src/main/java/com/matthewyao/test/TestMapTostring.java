@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class TestMapTostring {
     public static void main(String[] args) {
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("test1",1);
         map.put("test2",2);
         map.put("test3",3);
