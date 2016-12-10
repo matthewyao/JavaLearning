@@ -3,6 +3,7 @@ JavaLearning.iml
 *.class
 out/
 .idea/
+.idea/encodings.xml
 jars/
 ChromeDriver/
 sikuli-ide/

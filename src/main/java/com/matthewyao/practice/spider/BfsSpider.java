@@ -7,13 +7,13 @@ import java.util.Set;
 
 public class BfsSpider {
     /**
-     * ʹ�����ӳ�ʼ��URL����
+     * ???????????URL????
      */
     private void initCrawlerWithSeeds(String[] seeds) {
         for (int i = 0; i < seeds.length; i++)
             SpiderQueue.addUnvisitedUrl(seeds[i]);
     }
-    // �������������ȡ�� http://www.xxxx.com��ͷ������
+    // ???????????????? http://www.xxxx.com?????????
     public void crawling(String[] seeds) {
         LinkFilter filter = new LinkFilter() {
             public boolean accept(String url) {
@@ -24,29 +24,29 @@ public class BfsSpider {
 //                    return false;
             }
         };
-        // ��ʼ�� URL ����
+        // ????? URL ????
         initCrawlerWithSeeds(seeds);
-        // ѭ����������ץȡ�����Ӳ�����ץȡ����ҳ������ 1000
+        // ????????????????????????????????????? 1000
         while (!SpiderQueue.unVisitedUrlsEmpty()
                 && SpiderQueue.getVisitedUrlNum() <= 1000) {
-            // ��ͷ URL ������
+            // ??? URL ??????
             String visitUrl = (String) SpiderQueue.unVisitedUrlDeQueue();
             if (visitUrl == null)
                 continue;
             DownTool downLoader = new DownTool();
-            // ������ҳ
+            // ???????
             downLoader.downloadFile(visitUrl);
-            // �� URL �����ѷ��ʵ� URL ��
+            // ?? URL ?????????? URL ??
             SpiderQueue.addVisitedUrl(visitUrl);
-            // ��ȡ��������ҳ�е� URL
+            // ??????????????? URL
             Set<String> links = HtmlParserTool.extracLinks(visitUrl, filter);
-            // �µ�δ���ʵ� URL ���
+            // ????????? URL ???
             for (String link : links) {
                 SpiderQueue.addUnvisitedUrl(link);
             }
         }
     }
-    // main �������
+    // main ???????
     public static void main(String[] args) {
         BfsSpider crawler = new BfsSpider();
         crawler.crawling(new String[] { "http://www.ola.com.cn" });
