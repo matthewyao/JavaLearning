@@ -1,7 +1,6 @@
 package com.matthewyao.work;
 
 import java.sql.*;
-import com.microsoft.sqlserver.jdbc.*;
 
 /**
  * Created by matthewyao on 2016/11/25.

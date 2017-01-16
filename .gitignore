@@ -1,12 +1,12 @@
-.idea/workspace.xml
-.idea/compiler.xml
-.idea/*.xml
 JavaLearning.iml
+.idea/workspace.xml
 *.class
 out/
 .idea/
+.idea/encodings.xml
 jars/
 ChromeDriver/
 sikuli-ide/
 asprise-ocr/
+target/
 Asprise-OCR-Java/
