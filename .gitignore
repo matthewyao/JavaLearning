@@ -1,8 +1,7 @@
+.git/
 .idea/
-.idea/*
-*.class
 out/
-out/production/
-jars/
-sikuli-ide/
 target/
+jars/
+JavaLearning.iml
+*.calss
