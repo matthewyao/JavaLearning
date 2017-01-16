@@ -1,11 +1,8 @@
 .idea/
 .idea/*
-JavaLearning.iml
 *.class
 out/
+out/production/
 jars/
-ChromeDriver/
 sikuli-ide/
-asprise-ocr/
 target/
-Asprise-OCR-Java/
