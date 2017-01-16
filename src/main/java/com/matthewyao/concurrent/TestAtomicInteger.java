@@ -15,7 +15,7 @@ public class TestAtomicInteger {
         race.incrementAndGet();
     }
 
-    private static final int THREAD_COUNT = 30;
+    private static final int THREAD_COUNT = 100;
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
@@ -24,7 +24,7 @@ public class TestAtomicInteger {
             threads[i] = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int i=0; i<9000000; i++){
+                    for (int i=0; i<10000; i++){
                         increse();
                     }
                 }

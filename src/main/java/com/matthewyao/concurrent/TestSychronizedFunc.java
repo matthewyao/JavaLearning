@@ -6,12 +6,20 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by matthewyao on 2016/10/27.
  */
-public class TestVolatile {
+public class TestSychronizedFunc {
 
     public static volatile int race = 0;
 
+    private static Lock lock = new ReentrantLock();
+
     public static void increse(){
-        race++;
+        //由于race++并不是原子操作，所以存在其他线程将脏数据写回主内存
+        lock.lock();
+        try{
+            race++;
+        }finally {
+            lock.unlock();
+        }
     }
 
     private static final int THREAD_COUNT = 100;
@@ -38,7 +46,7 @@ public class TestVolatile {
             Thread.yield();
         }
 
-        //正常情况下每个线程都加了10000次，结果理应为300000，但由于自增非原子性，结果总会比300000小
+        //正常情况下每个线程都加了10000次，结果理应为200000，但由于自增非原子性，结果总会比200000小
         System.out.println(race);
         System.out.println("cost: " + (System.currentTimeMillis() - start ) + " mills");
     }
