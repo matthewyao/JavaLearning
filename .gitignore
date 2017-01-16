@@ -1,9 +1,8 @@
+.idea/
+.idea/*
 JavaLearning.iml
-.idea/workspace.xml
 *.class
 out/
-.idea/
-.idea/encodings.xml
 jars/
 ChromeDriver/
 sikuli-ide/
