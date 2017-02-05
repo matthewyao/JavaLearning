@@ -13,5 +13,6 @@ public class L169_MajorityElement {
             int val = nums[i];
 
         }
+        return 0;
     }
 }
