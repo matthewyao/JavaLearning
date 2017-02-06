@@ -3,7 +3,7 @@ package com.matthewyao.leetcode;
 /**
  * Created by matthewyao on 2017/2/5.
  */
-public class L122_Best_Time_to_Buy_and_Sell_Stock_II {
+public class L122_BestTimeToBuyAndSellStock_II {
     public static void main(String[] args) {
         System.out.println(maxProfit(new int[]{2,1,3,6}));
         System.out.println(maxProfit(new int[]{1,7,2,5}));
