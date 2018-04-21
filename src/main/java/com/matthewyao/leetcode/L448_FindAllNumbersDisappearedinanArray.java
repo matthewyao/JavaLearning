@@ -13,7 +13,7 @@ public class L448_FindAllNumbersDisappearedinanArray {
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
-        List<Integer> resList = new ArrayList<>();
+        List<Integer> resList = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; i++) {
             int index = Math.abs(nums[i]);
             if (nums[index - 1] > 0){

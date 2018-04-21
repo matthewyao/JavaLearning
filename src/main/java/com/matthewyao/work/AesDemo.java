@@ -1,7 +1,5 @@
 package com.matthewyao.work;
 
-import org.apache.commons.codec.binary.Hex;
-
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;

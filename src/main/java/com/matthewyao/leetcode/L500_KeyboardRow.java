@@ -17,7 +17,7 @@ public class L500_KeyboardRow {
     }
 
     public static String[] findWords(String[] words) {
-        Map<Character,Integer> charRowMap = new HashMap<>();
+        Map<Character,Integer> charRowMap = new HashMap<Character, Integer>();
         charRowMap.put('Q',1);
         charRowMap.put('W',1);
         charRowMap.put('E',1);
@@ -44,7 +44,7 @@ public class L500_KeyboardRow {
         charRowMap.put('B',3);
         charRowMap.put('N',3);
         charRowMap.put('M',3);
-        List<String> resList = new ArrayList<>();
+        List<String> resList = new ArrayList<String>();
         for (String word : words) {
             if (word.length() == 1){
                 resList.add(word);
