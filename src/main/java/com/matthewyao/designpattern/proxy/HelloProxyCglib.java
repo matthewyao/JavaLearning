@@ -1,4 +1,4 @@
-package com.matthewyao.designpattern;
+package com.matthewyao.designpattern.proxy;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

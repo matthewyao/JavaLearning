@@ -1,7 +1,5 @@
 package com.matthewyao.leetcode;
 
-import com.matthewyao.designpattern.HelloImpl;
-
 /**
  * Created by matthewyao on 2016/12/10.
  */

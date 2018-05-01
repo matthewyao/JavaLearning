@@ -1,6 +1,4 @@
-import com.matthewyao.designpattern.ProxyPattern;
 import com.matthewyao.leetcode.*;
-import com.matthewyao.test.TestMultiThread;
 
 /**
  * Created by matthewyao on 2016/5/9.

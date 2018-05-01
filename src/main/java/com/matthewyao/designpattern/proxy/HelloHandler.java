@@ -1,4 +1,4 @@
-package com.matthewyao.designpattern;
+package com.matthewyao.designpattern.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

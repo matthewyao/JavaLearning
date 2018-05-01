@@ -1,4 +1,4 @@
-package com.matthewyao.designpattern;
+package com.matthewyao.designpattern.proxy;
 
 /**
  * Created by matthewyao on 2016/9/16.

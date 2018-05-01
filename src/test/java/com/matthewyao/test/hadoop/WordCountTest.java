@@ -57,9 +57,9 @@ public class WordCountTest {
                     .withInput(new LongWritable(), value)
                     .withOutput(new Text("java"), new IntWritable(1))
                     .withOutput(new Text("haha"), new IntWritable(1))
-                    .withOutput(new Text("hadoop"), new IntWritable(1))
+                    .withOutput(new Text("java/com/matthewyao/test/hadoop"), new IntWritable(1))
                     .withOutput(new Text("welcome"), new IntWritable(1))
-                    .withOutput(new Text("hadoop"), new IntWritable(1))
+                    .withOutput(new Text("java/com/matthewyao/test/hadoop"), new IntWritable(1))
                     .runTest();
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,9 +72,9 @@ public class WordCountTest {
             new ReduceDriver<Text, IntWritable, Text, IntWritable>()
                     .withReducer(new WordCountReducer())
                     .withInput(new Text("java"), Arrays.asList(new IntWritable(1), new IntWritable(1)))
-                    .withInput(new Text("hadoop"), Arrays.asList(new IntWritable(1), new IntWritable(1), new IntWritable(1)))
+                    .withInput(new Text("java/com/matthewyao/test/hadoop"), Arrays.asList(new IntWritable(1), new IntWritable(1), new IntWritable(1)))
                     .withOutput(new Text("java"), new IntWritable(2))
-                    .withOutput(new Text("hadoop"), new IntWritable(3))
+                    .withOutput(new Text("java/com/matthewyao/test/hadoop"), new IntWritable(3))
                     .runTest();
         } catch (IOException e) {
             e.printStackTrace();
