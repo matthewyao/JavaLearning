@@ -18,6 +18,6 @@ public class AppleDecorator extends SaladDecorator {
 
     @Override
     protected double getPrice() {
-        return salad.getPrice() + 5;
+        return salad.getPrice() + 4.5;
     }
 }

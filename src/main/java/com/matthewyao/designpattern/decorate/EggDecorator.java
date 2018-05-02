@@ -18,6 +18,6 @@ public class EggDecorator extends SaladDecorator {
 
     @Override
     protected double getPrice() {
-        return salad.getPrice() + 3;
+        return salad.getPrice() + 2.5;
     }
 }

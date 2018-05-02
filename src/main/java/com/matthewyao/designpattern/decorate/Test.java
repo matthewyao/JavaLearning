@@ -23,6 +23,6 @@ public class Test {
     }
 
     private static void print(Salad salad) {
-        System.out.println(salad.getName() +" 一共: " + salad.getPrice() + "元，" + salad.getDesc());
+        System.out.println(salad.getName() +" 总计: " + salad.getPrice() + "元");
     }
 }
