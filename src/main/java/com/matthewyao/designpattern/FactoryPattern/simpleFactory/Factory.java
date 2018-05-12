@@ -19,10 +19,4 @@ public class Factory {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-        Factory.produce("square").draw();
-        Factory.produce("rectangle").draw();
-        Factory.produce("circle").draw();
-    }
 }
