@@ -14,11 +14,9 @@ public class TestVolatile {
         race++;
     }
 
-    private static final int THREAD_COUNT = 100;
+    private static final int THREAD_COUNT = 30;
 
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("");
         long start = System.currentTimeMillis();
         Thread[] threads = new Thread[THREAD_COUNT];
         for (int i=0; i<THREAD_COUNT; i++){
